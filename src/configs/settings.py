@@ -1,7 +1,11 @@
+from typing import List
+
+from pydantic import Field
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    api_keys: str
+    api_keys: List[str] = Field(default_factory=list, 
+                                 description="List of valid API keys for authentication")
 
     class Config:
         env_file = ".env"

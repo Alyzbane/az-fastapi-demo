@@ -1,7 +1,12 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class TextClassificationInput(BaseModel):
-    input_text_list: list[str]
+    input_text_list: list[str] = Field(
+        ...,
+        default_factory=list,
+        description="List of input text strings to classify.",
+        max_length=1000,
+    )
 
 class ResponseDict(BaseModel):
     output: dict[str, dict[str, float]]
