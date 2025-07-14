@@ -1,0 +1,14 @@
+[project]
+name = "ml-fastapi-observation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.116.1",
+    "loguru>=0.7.3",
+    "pydantic-settings>=2.10.1",
+    "scipy>=1.15.3",
+    "torch>=2.7.1",
+    "transformers>=4.53.2",
+]
